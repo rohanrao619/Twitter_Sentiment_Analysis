@@ -2,9 +2,9 @@
 
 This project aims to classify tweets from Twitter as having positive or negative sentiment using a Bidirectional Long Short Term Memory (Bi-LSTM) classification model. The model is trained on [Sentiment140](https://www.kaggle.com/kazanova/sentiment140) dataset containing 1.6 million tweets from various Twitter users. Two different Models are trained and compared to study the impact of the following on the produced results : 
 * Preprocessing the corpus using Natural Language Toolkit (NLTK). 
-* Using pretrained Word Embeddings (GloVe).
+* Using pre-trained Word Embeddings (GloVe).
 
-Detailed description of this project along with results can be found [here](#project-description-and-results).
+A detailed description of this project along with the results can be found [here](#project-description-and-results).
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ Running this project on your local system requires the following packages to be 
  You can also use [Google Colab](https://colab.research.google.com/) in a Web Browser without needing to install the mentioned packages.
  
 ### Usage
-This project is implemented as an interactive Jupyter Notebook. You just need to open the notebook on your local system or on [Google Colab](https://colab.research.google.com/) and execute the code cells in sequencial order. The function of each code cell is properly explained with the help of comments.</br>
+This project is implemented as an interactive Jupyter Notebook. You just need to open the notebook on your local system or on [Google Colab](https://colab.research.google.com/) and execute the code cells in sequential order. The function of each code cell is properly explained with the help of comments.</br>
 </br> Before starting you need to make sure that the path to the Sentiment140.csv and glove.6B.100d.txt files are updated according to your working environment. If you are using [Google Colab](https://colab.research.google.com/), then :
 1. Mount Google Drive using : 
 
@@ -67,7 +67,7 @@ This Project is licensed under the MIT License, see the [LICENSE](LICENSE) file 
 |:--:|:--:|
 |**Model_1**|**Model_2**|
 
-Architecture of both the Models is nearly same. The only difference is that Model_2 uses pretrained 100D GloVe Embeddings (to represent tokens of the vocabulary) and Data that is preprocessed using NLTK, whereas Model_1 uses 100D Encodings with no significant meaning (to represent tokens of the vocabulary) and Data that is not preprocessed.
+The architecture of both models is nearly the same. The only difference is that Model_2 uses pre-trained 100D GloVe Embeddings (to represent tokens of the vocabulary) and Data that is preprocessed using NLTK, whereas Model_1 uses 100D Encodings with no significant meaning (to represent tokens of the vocabulary) and Data that is not preprocessed.
 
 ### Preprocessing the Corpus
 
@@ -124,11 +124,11 @@ Both Models have different approaches to prepare the data before feeding it to t
       
 ### GloVe Word Embeddings
 
-Model_2 uses pretrained 100 Dimensional GloVe (Global Vectors for Word Representation) word embeddings to represent tokens of the vocabulary. This injects extra information that is external to the dataset, helping the model to understand relative meanings of different tokens, thus making the model generalize better. Model_1 on the other hand uses 100 Dimensional random Encodings to represent tokens of the vocabulary, making it hard for the model to find relationship between different tokens.
+Model_2 uses pre-trained 100 Dimensional GloVe (Global Vectors for Word Representation) word embeddings to represent tokens of the vocabulary. This injects extra information that is external to the dataset, helping the model to understand relative meanings of different tokens, thus making the model generalize better. Model_1, on the other hand, uses 100 Dimensional random Encodings to represent tokens of the vocabulary, making it hard for the model to find relationship between different tokens.
 
 ### Results
 
-Both Model_1 and Model_2 were trained using the Adam Optimizer with a learning rate of 0.001 and mini batch size of 1024 for 15 epochs. Same Training and Validation sets were used for both the models. Following results were observed at the end of 15th epoch :
+Both Model_1 and Model_2 were trained using Adam Optimizer with a learning rate of 0.001 and mini-batch size of 1024 for 15 epochs. The same Training and Validation sets were used for both the models. Following results were observed at the end of 15th epoch :
 
 |![](Results/Training_Loss.png)|![](Results/Validation_Loss.png)|
 |:--:|:--:|
@@ -138,8 +138,8 @@ Both Model_1 and Model_2 were trained using the Adam Optimizer with a learning r
 |:--:|:--:|
 |**Training Accuracy**|**Validation Accuracy**|
 
-It is clearly visible that preprocessing the coprus and using pretrained word embeddings has a significant impact on the model's performance. Model_2 is able to achieve nearly **80%** validation accuracy at the end of 15th epoch, which is approximately **2.5%** greater than Model_1. The difference in test accuracy was also found to be near **2.5%**. It can also be seen that Model_2 is able to converge much quickly when compared to Model_1 i.e. the training process is faster and much more optimized for Model_2. 
-</br></br>**So it can be concluded that it's definitely worth the effort to preprocess the corpus and use pretrained word embeddings in NLP tasks !**
+It is clearly visible that preprocessing the corpus and using pre-trained word embeddings has a significant impact on the model's performance. Model_2 is able to achieve nearly **80%** validation accuracy at the end of the 15th epoch, which is approximately **2.5%** greater than Model_1. The difference in test accuracy was also found to be near **2.5%**. It can also be seen that Model_2 is able to converge much quickly when compared to Model_1 i.e. the training process is faster and much more optimized for Model_2. 
+</br></br>**So it can be concluded that it's definitely worth the effort to preprocess the corpus and use pre-trained word embeddings in NLP tasks !**
 
 ## Final Notes
 **Thanks for going through this Repository! Have a nice day.**</br>
