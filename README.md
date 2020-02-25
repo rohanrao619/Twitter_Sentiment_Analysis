@@ -1,6 +1,6 @@
 # Twitter Sentiment Analysis
 
-This project aims to classify tweets from Twitter as having positive or negative sentiment using a Bidirectional Long Short Term Memory (Bi-LSTM) classification model. The model is trained on [Sentiment140](https://www.kaggle.com/kazanova/sentiment140) dataset containing 1.6 million tweets from various Twitter users. Two different Models are trained and compared to study the impact of the following on the produced results : 
+This project aims to classify tweets from Twitter as having positive or negative sentiment using a Bidirectional Long Short Term Memory (Bi-LSTM) classification model. The model is trained on the [Sentiment140](https://www.kaggle.com/kazanova/sentiment140) dataset containing 1.6 million tweets from various Twitter users. Two different models are trained and compared to study the impact of the following on the produced results : 
 * Preprocessing the corpus using Natural Language Toolkit (NLTK). 
 * Using pre-trained Word Embeddings (GloVe).
 
@@ -47,7 +47,7 @@ This project is implemented as an interactive Jupyter Notebook. You just need to
 * [Sklearn](https://scikit-learn.org/stable/) : Used for performing train-test split.
 * [NLTK](https://www.nltk.org/) : Used for preprocessing the corpus.
 * [Keras](https://keras.io/) : Used for designing, training and evaluating the classification model.
-* [Google Colab](https://colab.research.google.com/) : Used as the developement environment for executing high end computations on it's backend GPUs/TPUs and for editing Jupyter Notebook. 
+* [Google Colab](https://colab.research.google.com/) : Used as the development environment for executing high-end computations on its backend GPUs/TPUs and for editing Jupyter Notebook. 
 
 ## Contributing
 You are welcome to contribute :
@@ -124,11 +124,11 @@ Both Models have different approaches to prepare the data before feeding it to t
       
 ### GloVe Word Embeddings
 
-Model_2 uses pre-trained 100 Dimensional GloVe (Global Vectors for Word Representation) word embeddings to represent tokens of the vocabulary. This injects extra information that is external to the dataset, helping the model to understand relative meanings of different tokens, thus making the model generalize better. Model_1, on the other hand, uses 100 Dimensional random Encodings to represent tokens of the vocabulary, making it hard for the model to find relationship between different tokens.
+Model_2 uses pre-trained 100 Dimensional GloVe (Global Vectors for Word Representation) word embeddings to represent tokens of the vocabulary. This injects extra information that is external to the dataset, helping the model to understand relative meanings of different tokens, thus making the model generalize better. Model_1, on the other hand, uses 100 Dimensional random Encodings to represent tokens of the vocabulary, making it hard for the model to find a relationship between different tokens.
 
 ### Results
 
-Both Model_1 and Model_2 were trained using Adam Optimizer with a learning rate of 0.001 and mini-batch size of 1024 for 15 epochs. The same Training and Validation sets were used for both the models. Following results were observed at the end of 15th epoch :
+Both Model_1 and Model_2 were trained using Adam Optimizer with a learning rate of 0.001 and a mini-batch size of 1024 for 15 epochs. The same Training and Validation sets were used for both the models. Following results were observed at the end of 15th epoch :
 
 |![](Results/Training_Loss.png)|![](Results/Validation_Loss.png)|
 |:--:|:--:|
